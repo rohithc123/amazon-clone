@@ -1,5 +1,5 @@
 .header{
-    height: 5em;
+    height: 4em;
     display: flex;
     align-items: center;
     background-color: #131921;
@@ -9,10 +9,51 @@
 }
 
 .header-logo{
-    width: 100px;
+    width: 5em;
     object-fit: contain;
     margin: 0 20px;
     margin-top: 18px;
     background-color: #131921;
 
+}
+.header-search{
+     display: flex;
+     flex:1;
+     align-items: center;
+     border-radius: 1em;
+}
+.header-search-input{
+    height: 1em;
+    padding: 0.75em;
+    border: none;
+    width: 100%;
+}
+
+.header-search-icon{
+    padding: 0.2em;
+    height: 10em;
+    background-color: #cd902c;
+}
+
+.header-option-section1{
+    font-size: 0.8em;
+}
+
+.header-option-section2{
+    font-size: 1em;
+    font-weight: 700;
+}
+
+
+.header-nav{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.header-option{
+    display: flex;
+    flex-direction: column;
+    margin-left: 1em;
+    margin-right: 1em;
+    color: aliceblue;
 }
