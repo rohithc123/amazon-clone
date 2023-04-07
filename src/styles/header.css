@@ -36,12 +36,26 @@
 }
 
 .header-option-section1{
-    font-size: 0.8em;
+    align-items: left;
+    font-size: 0.7em;
 }
 
+
 .header-option-section2{
-    font-size: 1em;
+    font-size: 0.9em;
     font-weight: 700;
+}
+
+
+.header-basket-option{
+    display: flex;
+    align-items: center;
+    color: white;
+}
+
+.header-basket-count{
+    margin-left: 1em;
+    margin-right: 1em;
 }
 
 
@@ -53,7 +67,7 @@
 .header-option{
     display: flex;
     flex-direction: column;
-    margin-left: 1em;
-    margin-right: 1em;
-    color: aliceblue;
+    margin-left: 0.9em;
+    margin-right: 0.9em;
+    color: white;
 }
