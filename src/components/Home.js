@@ -21,7 +21,7 @@ function Home() {
             rating={3}
           />
           <Product
-            id="8273456892"
+            id="12536492134"
             title="Rich Dad Poor Dad"
             price={349}
             image={require("../images/rich-dad-poor-dad.jpg")}
@@ -31,36 +31,36 @@ function Home() {
 
         <div className="home-row">
           <Product
-            id="8273456892"
+            id="129384234"
             title="Reebok Mens Stride Runner M Running Shoe"
             price={979}
             image={require("../images/sports-shoe.jpg")}
-            rating={3}
+            rating={2}
           />
           <Product
-            id="8273456892"
+            id="901283464"
             title="JBL Wave 200 True Wireless "
-            price={53999}
+            price={2999}
             image={require("../images/jbl-wireless.jpg")}
             rating={3}
           />
           <Product
-            id="8273456892"
+            id="9028347"
             title="CELLBELL Back Office Chair"
             price={5499}
             image={require("../images/office-chair.jpg")}
-            rating={3}
+            rating={4}
           />
           
         </div>
 
         <div className="home-row">
           <Product
-            id="8273456892"
+            id="98213744"
             title="Samsung 139.7 cm (55 inches) 4K Ultra HD Smart LED TV UA55AU7700KLXL (Titan Gray)"
             price={53999}
             image={require("../images/oled-tv.jpg")}
-            rating={3}
+            rating={4}
           />
         </div>
       </div>
