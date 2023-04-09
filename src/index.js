@@ -1,13 +1,18 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './components/App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./components/App";
+import reportWebVitals from "./reportWebVitals";
+import Reducer,{initialState } from "./components/Reducer";
+import StateProvider from "./components/Stateprovider"
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <App />
+    {/* intial state-how data layer looks initially,reducer- how we manipulate the data*/}
+    <StateProvider initialState={initialState} Reducer={Reducer}>
+      <App />
+    </StateProvider>
   </React.StrictMode>
 );
 
