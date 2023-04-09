@@ -3,6 +3,7 @@ import React from "react";
 import "../styles/App.css";
 import Header from "./Header";
 import Home from "./Home";
+import Checkout from "./Checkout";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
@@ -19,7 +20,15 @@ function App() {
               </>
             }
           />
-          <Route path="/checkout" element={<Header />} />
+          <Route
+            path="/checkout"
+            element={
+              <>
+                <Header />
+                <Checkout />
+              </>
+            }
+          />
         </Routes>
       </Router>
     </div>
