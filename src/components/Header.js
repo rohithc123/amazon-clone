@@ -2,10 +2,12 @@ import React from "react";
 import { default as SearchIcon } from "@mui/icons-material/Search";
 import { default as ShoppingBasketIcon } from "@mui/icons-material/ShoppingBasket";
 import { NavLink } from "react-router-dom";
-
+import {useStateValue} from "./Stateprovider"
 import "../styles/header.css";
 
 function Header() {
+const [{basket},dispatch] =useStateValue();
+
   return (
     <div className="header">
       <NavLink to="/">
@@ -38,7 +40,7 @@ function Header() {
           <NavLink to="/checkout">
             <ShoppingBasketIcon />
           </NavLink>
-          <span className="header-option-section2 header-basket-count">0</span>
+          <span className="header-option-section2 header-basket-count">{basket?.length}</span>
         </div>
       </div>
     </div>
