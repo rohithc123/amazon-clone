@@ -11,8 +11,10 @@ function Login() {
           src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/1024px-Amazon_logo.svg.png"
           alt="Image not loading"
         />
-        Login page
       </NavLink>
+      <div className="login-container">
+        <h1>Sign In</h1>
+      </div>
     </div>
   );
 }
