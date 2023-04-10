@@ -2,11 +2,11 @@ import React from "react";
 import { default as SearchIcon } from "@mui/icons-material/Search";
 import { default as ShoppingBasketIcon } from "@mui/icons-material/ShoppingBasket";
 import { NavLink } from "react-router-dom";
-import {useStateValue} from "./Stateprovider"
+import { useStateValue } from "./Stateprovider";
 import "../styles/header.css";
 
 function Header() {
-const [{basket},dispatch] =useStateValue();
+  const [{ basket }, dispatch] = useStateValue();
 
   return (
     <div className="header">
@@ -26,7 +26,9 @@ const [{basket},dispatch] =useStateValue();
       <div className="header-nav">
         <div className="header-option">
           <span className="header-option-section1">Hello Guest</span>
-          <span className="header-option-section2">Sign In</span>
+          <NavLink to="/login">
+            <span className="header-option-section2">Sign In</span>
+          </NavLink>
         </div>
         <div className="header-option">
           <span className="header-option-section1">Returns</span>
@@ -40,7 +42,9 @@ const [{basket},dispatch] =useStateValue();
           <NavLink to="/checkout">
             <ShoppingBasketIcon />
           </NavLink>
-          <span className="header-option-section2 header-basket-count">{basket?.length}</span>
+          <span className="header-option-section2 header-basket-count">
+            {basket?.length}
+          </span>
         </div>
       </div>
     </div>
