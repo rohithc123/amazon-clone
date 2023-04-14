@@ -1,4 +1,6 @@
 import  firebase  from 'firebase/compat/app';
+import {getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+
 import 'firebase/compat/auth';
 import 'firebase/compat/firestore';
 // import  initializeApp   from "firebase";
