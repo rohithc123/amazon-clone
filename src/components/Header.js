@@ -6,7 +6,7 @@ import { useStateValue } from "./Stateprovider";
 import "../styles/header.css";
 
 function Header() {
-  const [{ basket }, dispatch] = useStateValue();
+  const [{ basket,user}, dispatch] = useStateValue();
 
   return (
     <div className="header">
@@ -27,7 +27,7 @@ function Header() {
         <div className="header-option">
           <span className="header-option-section1">Hello Guest</span>
           <NavLink to="/login">
-            <span className="header-option-section2">Sign In</span>
+            <span className="header-option-section2">{user?'Sign In':'Sign Out'}</span>
           </NavLink>
         </div>
         <div className="header-option">
