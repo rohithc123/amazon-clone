@@ -11,6 +11,10 @@ import firebase from "firebase/compat/app";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { useStateValue } from "./Stateprovider";
 import {auth} from "./Firebase"
+import {loadStripe} from "@stripe/stripe-js";
+import {Elements} from "@stripe/react-stripe-js";
+
+const promise = loadStripe('pk_test_51N9vIeSBKLOcXfw1fA2TIuFA7sx4i2duJWPszSgNj1O1rlFLNcjxta8dMi1WTuwehdtSBIqN6OnWNx9j9hAU4SBa00Riqa5z0D');
 
 function App() {
   const [basket, dispatch] = useStateValue();
@@ -69,8 +73,9 @@ function App() {
             element={
               <>
                 <Header />
-                <Payment/>
-                <h1>I am the payment route</h1>
+                <Elements stripe={promise}>
+                  <Payment/>
+                </Elements>
               </>
             }
           />
