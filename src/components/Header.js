@@ -3,10 +3,18 @@ import { default as SearchIcon } from "@mui/icons-material/Search";
 import { default as ShoppingBasketIcon } from "@mui/icons-material/ShoppingBasket";
 import { NavLink } from "react-router-dom";
 import { useStateValue } from "./Stateprovider";
+import firebase from "firebase/compat/app";
+import { getAuth, signOut } from "firebase/auth";
 import "../styles/header.css";
 
 function Header() {
-  const [{ basket,user}, dispatch] = useStateValue();
+  const [{ basket, user }, dispatch] = useStateValue();
+
+  const handleAuthentication = () => {
+    if (user) {
+      firebase.getAuth().signOut();
+    }
+  };
 
   return (
     <div className="header">
@@ -24,10 +32,12 @@ function Header() {
       </div>
 
       <div className="header-nav">
-        <div className="header-option">
-          <span className="header-option-section1">Hello Guest</span>
-          <NavLink to="/login">
-            <span className="header-option-section2">{user?'Sign In':'Sign Out'}</span>
+        <div onClick={handleAuthentication} className="header-option">
+          <span className="header-option-section1">{user ?"Hello "+user?.email:"Hello Guest"}</span>
+          <NavLink to={!user && "/login"}>
+            <span className="header-option-section2">
+              {user ? "Sign Out" : "Sign In"}
+            </span>
           </NavLink>
         </div>
         <div className="header-option">
