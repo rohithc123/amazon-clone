@@ -5,6 +5,7 @@ import Header from "./Header";
 import Home from "./Home";
 import Checkout from "./Checkout";
 import Login from "./Login";
+import Payment from "./Payment";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import firebase from "firebase/compat/app";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
@@ -60,6 +61,16 @@ function App() {
             element={
               <>
                 <Login />
+              </>
+            }
+          />
+          <Route
+            path="/payment"
+            element={
+              <>
+                <Header />
+                <Payment/>
+                <h1>I am the payment route</h1>
               </>
             }
           />
