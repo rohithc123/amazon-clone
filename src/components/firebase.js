@@ -26,4 +26,5 @@ const db = firebaseApp.firestore();
 //variable to handle sign in
 const auth = firebase.auth();
 
-export default { db, auth };
+export { auth };
+export default {db};

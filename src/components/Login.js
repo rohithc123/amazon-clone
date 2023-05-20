@@ -5,23 +5,28 @@ import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
 } from "firebase/auth";
-import { NavLink, useNavigate } from "react-router-dom";
-import auth from "./Firebase";
+import { NavLink, useNavigate} from "react-router-dom";
+import {auth} from "./Firebase";
 import "../styles/login.css";
 
 function Login() {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const auth = getAuth();
+  // const auth = getAuth();
 
   //singiin function
   const signIn = (e) => {
     e.preventDefault();
 
-    signInWithEmailAndPassword(auth,email, password)
+    auth
+    .signInWithEmailAndPassword(email, password)
       .then((auth) => {
+        console.log(auth);
+
+        if(auth){
         navigate("/");
+        }
       })
       .catch((error) => alert(error.message));
     //some firebase stuff
@@ -30,7 +35,7 @@ function Login() {
   const register = (e) => {
     e.preventDefault();
 
-    createUserWithEmailAndPassword(auth, email, password)
+    createUserWithEmailAndPassword(email, password)
       .then((auth) => {
         console.log(auth);
 
