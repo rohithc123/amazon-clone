@@ -1,7 +1,8 @@
-import React,{useState} from 'react'
+import React,{useState,useEffect} from 'react'
 import Checkoutproduct from "./Checkoutproduct"
 import CurrencyFormat from "react-currency-format";
 import "../styles/Payment.css"
+import axios from "./axios"
 
 import {useStateValue} from "./Stateprovider";
 import { CardElement,useStripe,useElements} from "@stripe/react-stripe-js";
@@ -25,7 +26,7 @@ function Payment() {
    
    //this comes into effect when payment loads or  any changes in basket that is specified in the brackets
    //telling stripe how much amount must be collected
-   useEffect(() => {
+   React.useEffect(() => {
      //generate the special stripe secret which allows us to charge th customer
   
      //axios is used for POST,GET etc. requests
@@ -63,6 +64,7 @@ function Payment() {
         setError(null)
         setProcessing(false)
 
+      //after completion of payment pushing them to orders page
        navigate.replace('/orders')
     })
 
